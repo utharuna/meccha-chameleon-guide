@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">画像を入れる場所</title>
+  <desc id="desc">あとからゲーム画面を追加するためのプレースホルダー</desc>
+  <rect width="800" height="450" rx="28" fill="#effbff"/>
+  <path d="M0 342 208 198l126 90 104-86 362 192v56H0Z" fill="#bfe777"/>
+  <circle cx="650" cy="100" r="55" fill="#ffb56d"/>
+  <rect x="285" y="133" width="230" height="160" rx="24" fill="#fff" stroke="#1ab6d4" stroke-width="12"/>
+  <circle cx="400" cy="213" r="52" fill="#d9f5ff" stroke="#17324a" stroke-width="10"/>
+  <path d="M342 133l25-35h66l25 35" fill="#fff" stroke="#17324a" stroke-width="10" stroke-linejoin="round"/>
+  <text x="400" y="370" text-anchor="middle" fill="#17324a" font-family="Yu Gothic, Meiryo, sans-serif" font-size="34" font-weight="700">スクリーンショットを追加</text>
+</svg>

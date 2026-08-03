@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="めっちゃカメレオン 初心者向け取扱説明書">
+  <meta property="og:description" content="Steamが初めてでも、この資料だけで遊び始められる初心者向け説明書です。">
+  <meta property="og:image" content="images/social-preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="description" content="Steamゲーム『めっちゃカメレオン』の初心者向け取扱説明書。Steamの準備、操作、ペイント、隠れ方、FAQをやさしく説明します。">
+  <title>めっちゃカメレオン｜初心者向け取扱説明書</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へ移動</a>
+
+  <header class="site-header">
+    <button id="menu-toggle" class="menu-toggle" type="button" aria-controls="toc" aria-expanded="false">
+      <span aria-hidden="true">☰</span> 目次
+    </button>
+    <div class="brand">
+      <span class="brand-icon" aria-hidden="true">🦎</span>
+      <div>
+        <p class="eyebrow">はじめてでも遊べる</p>
+        <p class="brand-title">めっちゃカメレオン取扱説明書</p>
+      </div>
+    </div>
+    <label class="search-wrap" for="search-input">
+      <span aria-hidden="true">🔎</span>
+      <span class="sr-only">説明書を検索</span>
+      <input id="search-input" type="search" placeholder="例：ペイント、マイク、重い" autocomplete="off">
+    </label>
+  </header>
+
+  <div class="layout">
+    <aside id="toc" class="toc" aria-label="目次">
+      <div class="toc-inner">
+        <p class="toc-title">目次</p>
+        <nav>
+          <a href="#cover">表紙</a>
+          <a href="#first">最初に読む</a>
+          <a href="#steam">Steamの準備</a>
+          <a href="#about">どんなゲーム？</a>
+          <a href="#flow">ゲームの流れ</a>
+          <a href="#controls">操作方法</a>
+          <a href="#screen">画面の見方</a>
+          <a href="#winlose">勝ち・負け</a>
+          <a href="#seeker">鬼側</a>
+          <a href="#hider">カメレオン側</a>
+          <a href="#paint">ペイント</a>
+          <a href="#hide">隠れ方とコツ</a>
+          <a href="#ten-minutes">最初の10分</a>
+          <a href="#mistakes">よくある失敗</a>
+          <a href="#faq">FAQ</a>
+          <a href="#glossary">用語集</a>
+          <a href="#shortcuts">早見表</a>
+          <a href="#trouble">トラブル</a>
+          <a href="#updates">更新情報</a>
+          <a href="#only-this">これだけ覚える</a>
+          <a href="#sources">参考資料</a>
+        </nav>
+        <p class="toc-note">今読んでいる場所が水色になります。</p>
+      </div>
+    </aside>
+
+    <main id="main">
+      <p id="search-status" class="search-status" role="status" aria-live="polite"></p>
+
+      <section id="cover" class="manual-section hero" data-title="表紙">
+        <div class="hero-copy">
+          <p class="kicker">MECCHA CHAMELEON</p>
+          <h1>めっちゃカメレオン<br>初心者向け取扱説明書</h1>
+          <p class="lead">Steamが初めてでも大丈夫。<br>このページだけで、最初の1回を遊べます。</p>
+          <div class="version-row">
+            <span>調査日 2026年8月3日</span>
+            <span>実機 version 3.5.1</span>
+            <span>Windows・Steam版</span>
+          </div>
+        </div>
+        <div class="hero-art" aria-label="カメレオンが壁に隠れる図">
+          <div class="wall-pattern"></div>
+          <div class="chameleon-figure" aria-hidden="true">
+            <span class="head"></span><span class="body"></span><span class="arm left"></span><span class="arm right"></span>
+          </div>
+          <p>色・形・動きを合わせよう！</p>
+        </div>
+      </section>
+
+      <section class="notice manual-section" data-title="情報の確かさ">
+        <h2>情報の確かさを分けています</h2>
+        <div class="legend">
+          <p><span class="tag official">公式</span> Steam公式で確認</p>
+          <p><span class="tag tested">実機</span> 3.5.1で確認</p>
+          <p><span class="tag community">プレイヤー</span> ガイドや動画で確認</p>
+          <p><span class="tag unknown">未確認</span> 確かな説明がない</p>
+        </div>
+        <p>3.5.1の詳しい公式更新内容は未確認です。ゲーム画面の案内を最優先してください。</p>
+      </section>
+
+      <section id="first" class="manual-section" data-title="最初に読む">
+        <h2>まず、この5つを守ろう</h2>
+        <ol class="big-steps compact">
+          <li><span>1</span><p>小学生は家の人に相談する。</p></li>
+          <li><span>2</span><p>本名や学校名を使わない。</p></li>
+          <li><span>3</span><p>最初は「Modなし」を選ぶ。</p></li>
+          <li><span>4</span><p>知らないリンクを開かない。</p></li>
+          <li><span>5</span><p>マイクはOFFでも遊べる。</p></li>
+        </ol>
+        <div class="safety-box">
+          <h3>本物のゲーム</h3>
+          <p>名前：MECCHA CHAMELEON</p>
+          <p>開発・販売：lemorion_1224</p>
+          <p>Steam App ID：4704690</p>
+          <a href="https://store.steampowered.com/app/4704690/">公式Steamストアを開く</a>
+        </div>
+      </section>
+
+      <section id="steam" class="manual-section" data-title="Steamの準備">
+        <h2>Steamの準備から起動まで</h2>
+        <ol class="big-steps">
+          <li><span>1</span><p><a href="https://store.steampowered.com/about/">Steam公式</a>から入れます。</p></li>
+          <li><span>2</span><p>無料アカウントを作ります。</p></li>
+          <li><span>3</span><p>ゲーム名を検索します。</p></li>
+          <li><span>4</span><p>開発者名を確認して買います。</p></li>
+          <li><span>5</span><p>インストールを選びます。</p></li>
+          <li><span>6</span><p>「ライブラリ」から起動します。</p></li>
+        </ol>
+        <div class="two-col">
+          <div>
+            <h3>公式の最低目安</h3>
+            <table>
+              <tbody>
+                <tr><th>OS</th><td>Windows 10 64-bit</td></tr>
+                <tr><th>CPU</th><td>Intel Core i5</td></tr>
+                <tr><th>画像</th><td>DirectX 11または12</td></tr>
+                <tr><th>容量</th><td>実機で約2.98GB</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <figure class="image-slot has-image" data-image-name="steam-play-button.png">
+            <img src="images/steam-play-button.png" alt="Steamライブラリに表示された、めっちゃカメレオンの緑色のプレイボタン" decoding="async">
+            <figcaption>Steamライブラリの「プレイ」ボタン</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="about" class="manual-section" data-title="どんなゲーム">
+        <h2>体をぬる、オンラインかくれんぼ</h2>
+        <p class="lead-small">カメレオンは景色に変身。鬼は時間内に全員を探します。</p>
+        <div class="role-diagram">
+          <div class="role hider-role"><span aria-hidden="true">🎨</span><h3>カメレオン</h3><p>場所を決める</p><p>体をぬる</p><p>動かず隠れる</p></div>
+          <div class="versus" aria-hidden="true">VS</div>
+          <div class="role seeker-role"><span aria-hidden="true">🔎</span><h3>鬼・ハンター</h3><p>形を探す</p><p>音を聞く</p><p>見つけて撃つ</p></div>
+        </div>
+        <h3>4つのモード</h3>
+        <div class="level-list">
+          <p><b>増え鬼：</b>見つかった人も鬼になる。</p>
+          <p><b>ベーシック：</b>鬼と隠れる側に分かれる。</p>
+          <p><b>ダブル：</b>全員が隠れ、あとで探す。</p>
+          <p><b>逆算チキンレース：</b>見逃し点を競う。</p>
+        </div>
+      </section>
+
+      <section id="flow" class="manual-section" data-title="ゲームの流れ">
+        <h2>ゲーム開始から終了まで</h2>
+        <ol class="timeline">
+          <li><b>1</b><span>ゲームを起動</span></li>
+          <li><b>2</b><span>日本語と設定を確認</span></li>
+          <li><b>3</b><span>部屋を探す／作る</span></li>
+          <li><b>4</b><span>ロビーで待つ</span></li>
+          <li><b>5</b><span>役割が決まる</span></li>
+          <li><b>6</b><span>カメレオンが準備</span></li>
+          <li><b>7</b><span>鬼が探す</span></li>
+          <li><b>8</b><span>勝敗と答え合わせ</span></li>
+        </ol>
+        <pre class="mermaid">
+flowchart TD
+  A["起動"] --> B["部屋へ入る"]
+  B --> C{"役割"}
+  C -->|カメレオン| D["場所→ポーズ→ペイント"]
+  C -->|鬼| E["待機"]
+  D --> F["探索"]
+  E --> F
+  F --> G{"全員発見？"}
+  G -->|はい| H["鬼の勝ち"]
+  G -->|時間切れ| I["カメレオンの勝ち"]
+        </pre>
+      </section>
+
+      <section id="controls" class="manual-section" data-title="操作方法 キー マウス">
+        <h2>操作方法</h2>
+        <div class="quick-callout"><span>まず覚える</span><b>WASD・マウス・F・R・左クリック</b></div>
+        <h3>移動とカメレオン</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>キー</th><th>内容</th></tr></thead>
+            <tbody>
+              <tr><td><kbd>W A S D</kbd></td><td>前・左・後ろ・右へ動く</td></tr>
+              <tr><td><kbd>Shift</kbd>＋WASD</td><td>速く動く</td></tr>
+              <tr><td><kbd>Space</kbd></td><td>ジャンプ／よじ登る</td></tr>
+              <tr><td><kbd>F</kbd></td><td>ペイントを開く／閉じる</td></tr>
+              <tr><td><kbd>R</kbd>＋マウス</td><td>ポーズを選び、離して決定</td></tr>
+              <tr><td><kbd>Q</kbd></td><td>分身を作る</td></tr>
+              <tr><td><kbd>X</kbd></td><td>分身を全部消す</td></tr>
+              <tr><td><kbd>1</kbd></td><td>笛で挑発</td></tr>
+              <tr><td><kbd>2</kbd></td><td>名前表示を切り替える</td></tr>
+              <tr><td><kbd>3</kbd></td><td>貫通描画を切り替える</td></tr>
+              <tr><td><kbd>T</kbd></td><td>文字チャット</td></tr>
+              <tr><td><kbd>V</kbd></td><td>自分のマイクON／OFF</td></tr>
+              <tr><td><kbd>B</kbd></td><td>聞こえる声ON／OFF</td></tr>
+              <tr><td><kbd>Esc</kbd></td><td>戻る／閉じる</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>マウス</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>操作</th><th>ふつう</th><th>ペイント</th><th>鬼</th></tr></thead>
+            <tbody>
+              <tr><td>マウス移動</td><td>見る</td><td>筆を動かす</td><td>ねらう</td></tr>
+              <tr><td>左クリック</td><td>回転ロックと組合せ</td><td>体をぬる</td><td>撃つ</td></tr>
+              <tr><td>右クリック</td><td>その場回転と組合せ</td><td>筆の太さ</td><td>視点切替</td></tr>
+              <tr><td>中央ボタン</td><td>―</td><td>体を見る角度</td><td>―</td></tr>
+              <tr><td>ホイール</td><td>カメラ距離</td><td>ズーム</td><td>―</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="caution">同じキーでも、役割や画面で動きが変わります。</p>
+      </section>
+
+      <section id="screen" class="manual-section" data-title="画面の見方 UI タイマー">
+        <h2>画面の見方</h2>
+        <div class="screen-map">
+          <div class="screen-box map-box"><b>① 左上</b><span>マップ名・人数</span></div>
+          <div class="screen-box timer-box"><b>② 上中央</b><span>タイマー</span></div>
+          <div class="screen-box key-box"><b>③ 右側</b><span>使えるキー</span></div>
+          <div class="screen-box clone-box"><b>④ 下中央</b><span>分身・移動案内</span></div>
+          <div class="screen-box mode-box"><b>⑤ 右下</b><span>モード・V・B</span></div>
+          <span class="screen-person" aria-hidden="true">🧍</span>
+        </div>
+        <figure class="image-slot has-image" data-image-name="lobby-screen.png">
+          <img src="images/lobby-screen.png" alt="ロビー画面。左上にマップと人数、上にタイマー、右に操作キー、下に分身と移動の案内がある" loading="lazy" decoding="async">
+          <figcaption>ロビー画面：地図、人数、タイマー、操作キーの位置</figcaption>
+        </figure>
+      </section>
+
+      <section id="winlose" class="manual-section" data-title="勝利条件 負ける条件">
+        <h2>勝ち・負けはとても簡単</h2>
+        <div class="win-grid">
+          <div class="win-card hider-win"><h3>カメレオンの勝ち</h3><p>1人でも時間まで残る。</p></div>
+          <div class="win-card seeker-win"><h3>鬼の勝ち</h3><p>時間内に全員を見つける。</p></div>
+        </div>
+        <pre class="mermaid">
+flowchart LR
+  A["探索開始"] --> B{"全員を発見？"}
+  B -->|はい| C["鬼の勝ち"]
+  B -->|時間切れ| D["カメレオンの勝ち"]
+        </pre>
+        <p>負けても、答え合わせで場所を覚えられます。</p>
+      </section>
+
+      <section id="seeker" class="manual-section" data-title="鬼側 ハンター 探し方">
+        <h2>鬼側の遊び方</h2>
+        <ol class="big-steps compact">
+          <li><span>1</span><p>入口で一度止まる。</p></li>
+          <li><span>2</span><p>部屋を小さく分ける。</p></li>
+          <li><span>3</span><p>上から下へ見る。</p></li>
+          <li><span>4</span><p>頭や肩の丸みを探す。</p></li>
+          <li><span>5</span><p>横へ動き、厚みを見る。</p></li>
+          <li><span>6</span><p>確かめてから撃つ。</p></li>
+        </ol>
+        <div class="levels">
+          <article><h3>初心者</h3><p>色より人の形を見る。</p><p>ランダムに走らない。</p></article>
+          <article><h3>中級者</h3><p>同じ物を比べる。</p><p>横から影を見る。</p></article>
+          <article><h3>上級者</h3><p>入口の死角を読む。</p><p>笛の方向と音量を使う。</p></article>
+        </div>
+      </section>
+
+      <section id="hider" class="manual-section" data-title="カメレオン側 隠れる 分身">
+        <h2>カメレオン側の遊び方</h2>
+        <div class="formula"><span>場所</span><i>→</i><span>ポーズ</span><i>→</i><span>1色</span><i>→</i><span>止まる</span></div>
+        <ol>
+          <li>体より大きな背景を選びます。</li>
+          <li>Rで人らしくない形にします。</li>
+          <li>Fで背景の主な色をぬります。</li>
+          <li>白い所がないか見直します。</li>
+          <li>探索前に手を止めます。</li>
+        </ol>
+        <h3>分身</h3>
+        <p><kbd>Q</kbd>で作り、<kbd>X</kbd>で全部消します。実機ロビーでは2個分の表示を確認しました。</p>
+        <p class="unknown-note">分身へ当たった時の全モード共通処理は未確認です。</p>
+      </section>
+
+      <section id="paint" class="manual-section" data-title="ペイント スポイト 色 メタリック ラフネス">
+        <h2>ペイント方法</h2>
+        <ol class="paint-flow">
+          <li>場所を決める</li><li>Fを押す</li><li>色を取る</li><li>全身をぬる</li><li>白を確認</li><li>早めに止める</li>
+        </ol>
+        <h3>基本操作</h3>
+        <table>
+          <thead><tr><th>操作</th><th>内容</th></tr></thead>
+          <tbody>
+            <tr><td>左クリック</td><td>体をぬる</td></tr>
+            <tr><td>右クリック＋左右</td><td>筆の太さを変える</td></tr>
+            <tr><td>Alt＋左ドラッグ</td><td>体を見る角度を変える</td></tr>
+            <tr><td>中央ボタン＋移動</td><td>体を見る角度を変える</td></tr>
+          </tbody>
+        </table>
+        <div class="spotlight">
+          <h3>3Dスポイト</h3>
+          <p>まず「Spaceを押したまま→色へ合わせる→離す」を試します。</p>
+          <p>だめなら「Spaceを1回→景色を左クリック」を試します。</p>
+          <p class="unknown-note">最新ガイドの説明が一致しないため、共通操作は未確認です。</p>
+        </div>
+        <div class="material-row">
+          <article><span>✨</span><h3>メタリック</h3><p>金属の光り方</p></article>
+          <article><span>🪨</span><h3>ラフネス</h3><p>ざらざら感</p></article>
+          <article><span>💡</span><h3>エミッシブ</h3><p>自分から光る強さ</p></article>
+        </div>
+      </section>
+
+      <section id="hide" class="manual-section" data-title="上手な隠れ方 見つからない コツ 初心者 中級者 上級者">
+        <h2>上手な隠れ方</h2>
+        <div class="checklist">
+          <label><input type="checkbox"> 背景は体より大きい</label>
+          <label><input type="checkbox"> 頭や肩が目立たない</label>
+          <label><input type="checkbox"> 物や模様が近くにある</label>
+          <label><input type="checkbox"> 鬼の入口から確認した</label>
+          <label><input type="checkbox"> 探索前に止まった</label>
+        </div>
+        <div class="levels">
+          <article><h3>初心者</h3><p>家具の横へ付く。</p><p>2色までにする。</p><p>白を全部ぬる。</p></article>
+          <article><h3>中級者</h3><p>壁と床の境目を使う。</p><p>明るさを2つに分ける。</p><p>毎回場所を変える。</p></article>
+          <article><h3>上級者</h3><p>光の向きも合わせる。</p><p>物の形を借りる。</p><p>入口の視線を読む。</p></article>
+        </div>
+        <p class="tip">一番大切なのは、探索中に動かないことです。</p>
+      </section>
+
+      <section id="ten-minutes" class="manual-section" data-title="最初の10分で覚えること">
+        <h2>最初の10分で覚えること</h2>
+        <div class="ten-grid">
+          <article><b>0〜2分</b><h3>動く</h3><p>WASD、マウス、Shift、Space</p></article>
+          <article><b>2〜4分</b><h3>ポーズ</h3><p>Rを押す、選ぶ、離す</p></article>
+          <article><b>4〜7分</b><h3>ぬる</h3><p>F、1色、全身、白チェック</p></article>
+          <article><b>7〜9分</b><h3>隠れる</h3><p>家具の横、小さく、動かない</p></article>
+          <article><b>9〜10分</b><h3>鬼をする</h3><p>形を見て、左クリック</p></article>
+        </div>
+      </section>
+
+      <section id="mistakes" class="manual-section" data-title="初心者がやりがちな失敗">
+        <h2>初心者がやりがちな失敗</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>失敗</th><th>直し方</th></tr></thead>
+            <tbody>
+              <tr><td>先にぬる</td><td>場所を先に決める</td></tr>
+              <tr><td>白が残る</td><td>頭上と足首を見る</td></tr>
+              <tr><td>色が多い</td><td>最初は2色まで</td></tr>
+              <tr><td>人のように立つ</td><td>Rで形を小さくする</td></tr>
+              <tr><td>探索中に直す</td><td>探索前に止まる</td></tr>
+              <tr><td>暗い角だけ使う</td><td>家具や模様も使う</td></tr>
+              <tr><td>鬼で連射する</td><td>形を見てから撃つ</td></tr>
+              <tr><td>本名を使う</td><td>ニックネームにする</td></tr>
+              <tr><td>マイクを忘れる</td><td>Vと赤い印を見る</td></tr>
+              <tr><td>知らないModへ入る</td><td>最初はModなし</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="faq" class="manual-section" data-title="よくある質問 FAQ">
+        <div class="section-head">
+          <h2>よくある質問</h2>
+          <div class="details-actions">
+            <button id="open-all" type="button">全部ひらく</button>
+            <button id="close-all" type="button">全部とじる</button>
+          </div>
+        </div>
+        <div class="faq-list">
+          <details><summary>1. 1人で遊べますか？</summary><p>通常対戦は2人以上です。実機では最大人数1の非公開部屋とロビーを確認しました。一人練習モードは未確認です。</p></details>
+          <details><summary>2. 何人がおすすめ？</summary><p>公式は2〜10人をおすすめしています。</p></details>
+          <details><summary>3. 無料ですか？</summary><p>有料です。価格は国とセールで変わります。</p></details>
+          <details><summary>4. 日本語で遊べますか？</summary><p>はい。タイトル画面の「日本語」を選びます。</p></details>
+          <details><summary>5. Macで遊べますか？</summary><p>公式ストアはWindowsのみです。Mac対応は未確認です。</p></details>
+          <details><summary>6. コントローラーは使えますか？</summary><p>対応が進んでいますが、完全対応は未確認です。ペイントはマウスがおすすめです。</p></details>
+          <details><summary>7. Steam Deckは使えますか？</summary><p>公式の確認済み表示は未確認です。</p></details>
+          <details><summary>8. ゲームの起動方法は？</summary><p>Steamの「ライブラリ」→ゲーム名→「プレイ」です。</p></details>
+          <details><summary>9. 日本語になりません。</summary><p>タイトル下の「日本語」を選びます。Steamの言語設定も確認します。</p></details>
+          <details><summary>10. 公開部屋へ入るには？</summary><p>「サーバーを探す」→「パブリック」→「参加」です。</p></details>
+          <details><summary>11. 友達の部屋が見つかりません。</summary><p>全員のversion、部屋名、パスワード、地域、空き人数を確認します。</p></details>
+          <details><summary>12. 途中参加で動けません。</summary><p>観戦中の時は、今の回が終わるまで待ちます。</p></details>
+          <details><summary>13. 観戦では何ができますか？</summary><p>見る人の切り替えや自由カメラが使えます。4キーの案内があります。</p></details>
+          <details><summary>14. カメラが速すぎます。</summary><p>「設定」→「ゲーム全般」→「視点感度」を下げます。</p></details>
+          <details><summary>15. 画面酔いします。</summary><p>モーションブラーを0%にし、画面を小さくして休みます。</p></details>
+          <details><summary>16. 動きがカクカクします。</summary><p>パフォーマンスモードをONにし、画質を下げます。</p></details>
+          <details><summary>17. Fを押してもぬれません。</summary><p>役割と画面を確認し、Fで開き直します。日本語入力もOFFにします。</p></details>
+          <details><summary>18. スポイトが使えません。</summary><p>Spaceを押したまま色へ合わせて離します。だめならSpaceを1回押して景色を左クリックします。</p></details>
+          <details><summary>19. 筆を太くするには？</summary><p>右クリックを押したまま、マウスを右へ動かします。</p></details>
+          <details><summary>20. ぬり間違えました。</summary><p>正しい色を上からぬります。元に戻す操作は未確認です。</p></details>
+          <details><summary>21. 体の裏をぬるには？</summary><p>Alt＋左ドラッグか、中央ボタンを押しながら動かします。</p></details>
+          <details><summary>22. ポーズの決め方は？</summary><p>Rを押したまま選び、Rを離します。</p></details>
+          <details><summary>23. 分身は何個ですか？</summary><p>実機ロビーでは2個分を確認しました。設定や更新で変わる可能性があります。</p></details>
+          <details><summary>24. 分身を消すには？</summary><p>Xですべて消します。1体だけ消す方法は未確認です。</p></details>
+          <details><summary>25. 分身が撃たれたら？</summary><p>本体も発見扱いというプレイヤー情報があります。共通処理は未確認です。</p></details>
+          <details><summary>26. マイクを切るには？</summary><p>Vです。赤いマイク印も確認します。</p></details>
+          <details><summary>27. ほかの人の声を切るには？</summary><p>Bで聞こえるボイスを切り替えます。</p></details>
+          <details><summary>28. 文字チャットは？</summary><p>Tです。いやな言葉を見たら部屋を出ます。</p></details>
+          <details><summary>29. 笛は何ですか？</summary><p>場所を音で知らせる挑発です。1で鳴らします。</p></details>
+          <details><summary>30. 鬼の弾は無限ですか？</summary><p>部屋設定で変わります。赤い四角が出たら残りを見ます。</p></details>
+          <details><summary>31. 鬼の勝ち方は？</summary><p>基本は時間内に全員を見つけます。</p></details>
+          <details><summary>32. カメレオンの勝ち方は？</summary><p>基本は1人でも時間まで残ります。</p></details>
+          <details><summary>33. 増え鬼とは？</summary><p>見つかった人も鬼になります。</p></details>
+          <details><summary>34. Modとは？</summary><p>プレイヤーが追加する地図などです。最初はModなしを選びます。</p></details>
+          <details><summary>35. カスタムマップは安全？</summary><p>既知の問題は3.1.0で修正済みです。最新版にし、知らないリンクを開きません。</p></details>
+          <details><summary>36. 公式Discordは？</summary><p>公式Steamニュースから招待を開いてください。2026年7月26日の案内は kUh2PNPjpq です。</p></details>
+          <details><summary>37. 配信できますか？</summary><p>公式は配信を許可しています。タイトルにゲーム名を入れます。</p></details>
+          <details><summary>38. ゲームが落ちます。</summary><p>SteamとPCを再起動し、最新版とゲームファイルを確認します。</p></details>
+        </div>
+      </section>
+
+      <section id="glossary" class="manual-section" data-title="用語集">
+        <h2>用語集</h2>
+        <dl class="glossary">
+          <div><dt>Steam</dt><dd>ゲームを買い、入れて、起動するアプリ。</dd></div>
+          <div><dt>サーバー</dt><dd>みんなが集まるゲームの部屋。</dd></div>
+          <div><dt>ホスト</dt><dd>部屋を作り、ルールを決める人。</dd></div>
+          <div><dt>ロビー</dt><dd>試合前に待つ場所。</dd></div>
+          <div><dt>擬態</dt><dd>景色や物に似せること。</dd></div>
+          <div><dt>輪郭</dt><dd>物の外側の形。</dd></div>
+          <div><dt>3Dスポイト</dt><dd>景色から色を取る道具。</dd></div>
+          <div><dt>Mod</dt><dd>プレイヤーが追加する地図など。</dd></div>
+          <div><dt>UI</dt><dd>ボタンや数字など、画面の案内。</dd></div>
+          <div><dt>FPS</dt><dd>画面のなめらかさ、または一人称視点。</dd></div>
+          <div><dt>TPS</dt><dd>自分の後ろから見る視点。</dd></div>
+          <div><dt>Ping</dt><dd>通信の待ち時間。小さいほど速い。</dd></div>
+        </dl>
+      </section>
+
+      <section id="shortcuts" class="manual-section" data-title="ショートカット一覧 早見表">
+        <h2>ショートカット一覧</h2>
+        <div class="shortcut-grid">
+          <p><kbd>WASD</kbd><span>移動</span></p><p><kbd>Shift</kbd><span>速く動く</span></p>
+          <p><kbd>Space</kbd><span>ジャンプ・よじ登り</span></p><p><kbd>F</kbd><span>ペイント</span></p>
+          <p><kbd>R</kbd><span>ポーズ</span></p><p><kbd>Q</kbd><span>分身</span></p>
+          <p><kbd>X</kbd><span>分身を消す</span></p><p><kbd>1</kbd><span>笛</span></p>
+          <p><kbd>2</kbd><span>名前表示</span></p><p><kbd>3</kbd><span>貫通描画</span></p>
+          <p><kbd>T</kbd><span>文字チャット</span></p><p><kbd>V</kbd><span>マイク</span></p>
+          <p><kbd>B</kbd><span>聞こえる声</span></p><p><kbd>Esc</kbd><span>戻る</span></p>
+        </div>
+      </section>
+
+      <section id="trouble" class="manual-section" data-title="トラブル対処 起動しない 重い 音 マイク">
+        <h2>トラブル対処</h2>
+        <ol class="restart-list"><li>ゲームを閉じる</li><li>Steamを再起動</li><li>更新を確認</li><li>PCを再起動</li><li>ファイルを確認</li></ol>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>困ったこと</th><th>試すこと</th></tr></thead>
+            <tbody>
+              <tr><td>起動しない</td><td>必ずSteamから起動する</td></tr>
+              <tr><td>部屋へ入れない</td><td>version、空き、地域、パスワード</td></tr>
+              <tr><td>画面が重い</td><td>パフォーマンスモード、画質を下げる</td></tr>
+              <tr><td>画面酔い</td><td>モーションブラー0%、休憩</td></tr>
+              <tr><td>音がない</td><td>B、ゲーム音量、Windows音量</td></tr>
+              <tr><td>声が届く</td><td>VをOFF、赤いマイク印</td></tr>
+              <tr><td>キーがきかない</td><td>日本語入力OFF、役割を確認</td></tr>
+              <tr><td>知らないMod</td><td>退出し、Modなしの部屋へ</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="safety-box">
+          <h3>安全のために</h3>
+          <p>Steam以外の「修正版」を入れない。</p>
+          <p>知らないファイルやリンクを開かない。</p>
+          <p>困ったら家の人へ相談する。</p>
+        </div>
+      </section>
+
+      <section id="updates" class="manual-section" data-title="アップデート 3.5.1 3.5.0">
+        <h2>アップデートで変わるもの</h2>
+        <div class="version-panel">
+          <div><span>実機</span><b>version 3.5.1</b><small>2026年8月3日</small></div>
+          <div><span>公式の詳しい告知</span><b>3.5.0</b><small>2026年8月1日</small></div>
+        </div>
+        <p class="unknown-note">3.5.1の詳しい公式変更点は未確認です。</p>
+        <h3>公式3.5.0の主な変更</h3>
+        <ul>
+          <li>「8番出口」コラボマップを追加。</li>
+          <li>フレンドのサーバー検索を追加。</li>
+          <li>カラーパレット画面を調整。</li>
+          <li>モーションブラーの問題を修正。</li>
+          <li>コントローラーのズームを修正。</li>
+          <li>マイクを初めからミュート。</li>
+        </ul>
+        <h3>更新後に見る5つ</h3>
+        <ol><li>右上のversion</li><li>公式ニュース</li><li>F、R、Q、X</li><li>Vの赤い印</li><li>最初はModなし</li></ol>
+      </section>
+
+      <section id="only-this" class="manual-section final-card" data-title="最初はこれだけ覚えれば遊べます まとめ">
+        <p class="kicker">最初はこれだけ</p>
+        <h2>場所 → ポーズ → 1色 → 止まる</h2>
+        <div class="final-grid">
+          <div><h3>カメレオン</h3><p>WASDで場所へ行く。</p><p>Rで小さくなる。</p><p>Fで1色ぬる。</p><p>鬼が来たら止まる。</p></div>
+          <div><h3>鬼</h3><p>WASDで歩く。</p><p>人の形を探す。</p><p>あやしい所を撃つ。</p><p>横からも見る。</p></div>
+        </div>
+        <p class="big-message">これで最初の1回を遊べます。</p>
+      </section>
+
+      <section id="sources" class="manual-section sources" data-title="参考資料 調査">
+        <h2>参考資料と確認範囲</h2>
+        <p>調査日：2026年8月3日</p>
+        <ul>
+          <li><a href="https://store.steampowered.com/app/4704690/">公式Steamストア</a></li>
+          <li><a href="https://steamcommunity.com/app/4704690/allnews/?l=japanese">公式Steamニュース</a></li>
+          <li><a href="https://steamcommunity.com/app/4704690/guides/?l=japanese">Steamガイド</a></li>
+          <li><a href="https://steamcommunity.com/app/4704690/videos/">Steamの実プレイ動画一覧</a></li>
+          <li><a href="https://help.steampowered.com/ja/faqs/view/1DED-79C6-0568-A72C">Steamアカウント作成</a></li>
+          <li><a href="https://note.com/reiroom/n/n09e91719d881">version 3.5.1日本語ガイド</a></li>
+          <li><a href="https://mecchachameleon.zone/meccha-chameleon-controls/">プレイヤー検証の操作ガイド</a></li>
+          <li><a href="https://meccha-chameleon.wiki/tips/beginner/">初心者向け10のコツ</a></li>
+          <li><a href="https://www.youtube.com/watch?v=1_p9HKjNqnk">初心者・上級者向け動画</a></li>
+          <li><a href="https://www.youtube.com/watch?v=LWy8YJMOWuU">実プレイ動画</a></li>
+        </ul>
+        <p>実機では、version、設定、非公開部屋、ロビー、キー案内を確認しました。公開対戦の全モード、3Dスポイトの共通操作、全コントローラーは未確認です。</p>
+      </section>
+    </main>
+  </div>
+
+  <button id="to-top" class="to-top" type="button" aria-label="ページ上部へ戻る">↑</button>
+  <noscript><p class="noscript">検索と目次メニューを使うにはJavaScriptを有効にしてください。本文はそのまま読めます。</p></noscript>
+</body>
+</html>
