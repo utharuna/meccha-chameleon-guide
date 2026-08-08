@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="静的HTMLをGitHubへ登録し、GitHub Pagesで公開する初心者向け画像付き手順書">
+  <title>GitHub PagesでHTMLを公開する方法｜画像付き手順書</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">はじめてでも大丈夫</p>
+      <h1>GitHub Pagesで<br>HTMLを公開する方法</h1>
+      <p class="lead">実際のスクリーンショット10枚で、最初から公開完了まで説明します。</p>
+      <div class="badges"><span>無料</span><span>画像付き</span><span>初心者向け</span></div>
+    </div>
+  </header>
+
+  <div class="page">
+    <aside class="toc" aria-label="目次">
+      <h2>目次</h2>
+      <a href="#before">最初に確認</a>
+      <a href="#step1">1. GitHubへログイン</a>
+      <a href="#step2">2. リポジトリ作成</a>
+      <a href="#step3">3. アップロード画面</a>
+      <a href="#step4">4. ファイルを登録</a>
+      <a href="#step5">5. 表示を待つ</a>
+      <a href="#step6">6. 登録完了を確認</a>
+      <a href="#step7">7. Pagesを開く</a>
+      <a href="#step8">8. 公開元を設定</a>
+      <a href="#step9">9. 公開処理を待つ</a>
+      <a href="#step10">10. 公開完了</a>
+      <a href="#update">更新方法</a>
+      <a href="#trouble">困ったとき</a>
+    </aside>
+
+    <main>
+      <section class="notice">
+        <h2>この手順書の画像について</h2>
+        <p>実際の操作画面を使用しています。ユーザー名は、説明用の架空名「sample-chameleon」に置き換えています。別の人が使う場合は、自分の名前に読み替えてください。</p>
+      </section>
+
+      <section id="before">
+        <h2>最初に確認すること</h2>
+        <ul class="checklist">
+          <li>GitHubのアカウントがある</li>
+          <li>公開用フォルダーにindex.htmlがある</li>
+          <li>CSS、JavaScript、画像がそろっている</li>
+          <li>個人情報や公開前の画像が入っていない</li>
+          <li>Publicでは誰でも見られると理解している</li>
+        </ul>
+        <div class="flow"><span>リポジトリ作成</span><b>→</b><span>ファイル登録</span><b>→</b><span>Pages設定</span><b>→</b><span>URL共有</span></div>
+      </section>
+
+      <article id="step1" class="step">
+        <p class="step-no">STEP 1</p><h2>GitHubへログインする</h2>
+        <p>ダッシュボード左側にある緑色の<strong>New</strong>を押します。</p>
+        <figure><img src="images/01-github-dashboard.png" alt="GitHubダッシュボードのNewボタン"><figcaption>左側の緑色のNewを押します。</figcaption></figure>
+      </article>
+
+      <article id="step2" class="step">
+        <p class="step-no">STEP 2</p><h2>新しいリポジトリを作る</h2>
+        <table><thead><tr><th>項目</th><th>設定例</th></tr></thead><tbody>
+          <tr><td>Repository name</td><td>meccha-chameleon-guide</td></tr>
+          <tr><td>Description</td><td>公開するページの説明</td></tr>
+          <tr><td>Visibility</td><td>Public</td></tr>
+          <tr><td>Add README</td><td>On</td></tr>
+          <tr><td>.gitignore / License</td><td>追加しない</td></tr>
+        </tbody></table>
+        <p>設定後、画面下の<strong>Create repository</strong>を押します。</p>
+        <figure><img src="images/02-create-repository.png" alt="新しいGitHubリポジトリの作成画面"><figcaption>Publicを選び、READMEをOnにします。</figcaption></figure>
+        <p class="warning"><strong>Publicの注意：</strong>登録したファイルは誰でも見られます。秘密情報を入れないでください。</p>
+      </article>
+
+      <article id="step3" class="step">
+        <p class="step-no">STEP 3</p><h2>アップロード画面を開く</h2>
+        <ol><li><strong>Add file</strong>を押す</li><li><strong>Upload files</strong>を選ぶ</li></ol>
+        <figure><img src="images/03-repository-created.png" alt="作成済みリポジトリのAdd fileボタン"><figcaption>Add fileからUpload filesを開きます。</figcaption></figure>
+      </article>
+
+      <article id="step4" class="step">
+        <p class="step-no">STEP 4</p><h2>公開用ファイルを登録する</h2>
+        <p>公開専用フォルダーの<strong>中身</strong>をアップロード枠へドラッグします。</p>
+        <div class="columns"><div><h3>入れるもの</h3><ul><li>index.html</li><li>style.css</li><li>script.js</li><li>assets</li><li>images</li></ul></div><div><h3>入れないもの</h3><ul><li>元画像</li><li>バックアップ</li><li>作業フォルダー</li><li>パスワード</li><li>個人情報</li></ul></div></div>
+        <p><strong>Commit directly to the main branch</strong>を選び、<strong>Commit changes</strong>を押します。</p>
+        <figure><img src="images/04-upload-files.png" alt="GitHubのファイルアップロード画面"><figcaption>ファイル一覧を確認してCommit changesを押します。</figcaption></figure>
+        <p class="warning"><strong>重要：</strong>publicフォルダー自体ではなく、中身を入れます。index.htmlが一番上に見える状態が正解です。</p>
+      </article>
+
+      <article id="step5" class="step">
+        <p class="step-no">STEP 5</p><h2>ファイルが見えるまで待つ</h2>
+        <p>登録直後にREADMEしか見えない場合は、30秒ほど待って<strong>F5</strong>を押します。</p>
+        <figure><img src="images/05-wait-for-files.png" alt="登録直後でREADMEだけが表示される画面"><figcaption>反映には少し時間がかかる場合があります。</figcaption></figure>
+      </article>
+
+      <article id="step6" class="step">
+        <p class="step-no">STEP 6</p><h2>アップロード完了を確認する</h2>
+        <p>assets、images、index.html、script.js、style.cssが表示されたら成功です。</p>
+        <figure><img src="images/06-files-uploaded.png" alt="必要な公開ファイルが表示されたリポジトリ"><figcaption>必要なファイルがリポジトリのルートにそろっています。</figcaption></figure>
+      </article>
+
+      <article id="step7" class="step">
+        <p class="step-no">STEP 7</p><h2>GitHub Pagesの設定を開く</h2>
+        <ol><li>上部の<strong>Settings</strong>を押す</li><li>左側の<strong>Pages</strong>を押す</li></ol>
+        <figure><img src="images/07-settings-pages-menu.png" alt="GitHub SettingsのPagesメニュー"><figcaption>Pagesは左側のCodespacesのすぐ下にあります。</figcaption></figure>
+      </article>
+
+      <article id="step8" class="step">
+        <p class="step-no">STEP 8</p><h2>公開元を設定する</h2>
+        <table><thead><tr><th>項目</th><th>選ぶ内容</th></tr></thead><tbody><tr><td>Source</td><td>Deploy from a branch</td></tr><tr><td>Branch</td><td>main</td></tr><tr><td>Folder</td><td>/(root)</td></tr></tbody></table>
+        <p>設定後、<strong>Save</strong>を押します。</p>
+        <figure><img src="images/08-pages-settings.png" alt="GitHub PagesのBuild and deployment設定"><figcaption>mainと/(root)を選びます。</figcaption></figure>
+        <p class="tip">Start free for 30 daysやCustom domainは、通常の無料公開では不要です。</p>
+      </article>
+
+      <article id="step9" class="step">
+        <p class="step-no">STEP 9</p><h2>公開処理を待つ</h2>
+        <p>保存後、GitHubがページを作ります。数分から10分ほど待ち、F5で更新します。画面を開いたままにする必要はありません。</p>
+        <figure><img src="images/09-pages-building.png" alt="GitHub Pagesの作成中画面"><figcaption>currently being builtと表示されている間は作成中です。</figcaption></figure>
+      </article>
+
+      <article id="step10" class="step success">
+        <p class="step-no">STEP 10</p><h2>公開完了を確認する</h2>
+        <p><strong>Your site is live at ...</strong>と表示されたら成功です。<strong>Visit site</strong>で公開ページを開きます。</p>
+        <figure><img src="images/10-site-live.png" alt="Your site is liveと表示された公開完了画面"><figcaption>この表示が出れば、家族や友人へURLを送れます。</figcaption></figure>
+        <pre>https://GitHubユーザー名.github.io/リポジトリ名/</pre>
+        <p class="warning"><strong>Unpublish site</strong>は公開を止めるボタンです。公開を続ける場合は押しません。</p>
+      </article>
+
+      <section id="update">
+        <h2>内容を更新する方法</h2>
+        <ol><li>公開用ファイルを修正する</li><li>Add file → Upload filesを開く</li><li>変更ファイルを登録する</li><li>Commit changesを押す</li><li>数分後に公開ページを確認する</li></ol>
+        <p>公開URLは基本的に変わりません。</p>
+      </section>
+
+      <section id="trouble">
+        <h2>困ったとき</h2>
+        <details open><summary>404と表示される</summary><p>10分待ってF5を押します。index.htmlの位置と、Pagesのmain・/(root)設定を確認します。</p></details>
+        <details><summary>画像だけ表示されない</summary><p>imagesフォルダー、HTMLの画像名、大文字と小文字を確認します。</p></details>
+        <details><summary>公開を止めたい</summary><p>Settings → Pages → Unpublish siteを使います。</p></details>
+      </section>
+
+      <section class="skill-box">
+        <h2>次回、Codexへ依頼する方法</h2>
+        <code>$publish-static-html-github-pagesを使って、このHTMLをGitHub Pagesで公開してください。</code>
+      </section>
+    </main>
+  </div>
+
+  <footer>GitHubの画面構成は、今後変更される場合があります。</footer>
+</body>
+</html>
