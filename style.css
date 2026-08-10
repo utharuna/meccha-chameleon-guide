@@ -163,6 +163,23 @@ details[open] { border-color: #93d8e6; }
 .toolbar button:hover { background: var(--sky-100); }
 .checklist { padding-left: 1.5em; }
 .checklist li { margin: .55em 0; }
+.checklist { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; padding: 0; }
+.checklist label { display: flex; gap: 9px; align-items: center; padding: 12px 14px; border: 1px solid var(--line); border-radius: 14px; background: var(--sky-50); font-weight: 800; }
+.checklist input { width: 1.15em; height: 1.15em; accent-color: var(--lime-500); }
+.hide-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 0 0 26px; padding: 0; list-style: none; }
+.hide-steps li { display: grid; grid-template-columns: 38px 1fr; gap: 10px; align-items: start; padding: 15px; border-radius: 16px; background: var(--lime-100); }
+.hide-steps li > span { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--lime-500); color: #274900; font-weight: 900; }
+.hide-steps p { margin: 0; }
+.hide-steps small { display: block; margin-top: 4px; color: var(--muted); line-height: 1.5; }
+.hide-example-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-bottom: 26px; }
+.hide-example-grid article { position: relative; padding: 18px 18px 15px 64px; border: 1px solid var(--line); border-radius: 18px; background: var(--sky-50); }
+.hide-example-grid.second-step article { background: var(--lime-100); }
+.hide-example-grid.third-step article { background: var(--orange-100); }
+.hide-example-grid h4 { margin: 0 0 10px; font-size: 1.08rem; }
+.hide-example-grid p { margin: .45em 0; }
+.example-no { position: absolute; top: 16px; left: 16px; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--sky-500); color: #fff; font-weight: 900; }
+.second-step .example-no { background: var(--lime-500); color: #274900; }
+.third-step .example-no { background: var(--orange-500); color: #fff; }
 .footer-note { color: var(--muted); font-size: .85rem; }
 .source-list { word-break: break-word; }
 .source-list li { margin: .7em 0; }
@@ -192,7 +209,7 @@ details[open] { border-color: #93d8e6; }
   .search-wrap { grid-column: 1 / -1; }
   .layout { padding: 18px 12px 80px; }
   .manual-section { padding: 24px 18px; border-radius: 18px; }
-  .hero, .two-col, .three-col, .tips-grid, .level-cards, .final-grid { grid-template-columns: 1fr; }
+  .hero, .two-col, .three-col, .tips-grid, .level-cards, .final-grid, .hide-example-grid, .hide-steps, .checklist { grid-template-columns: 1fr; }
   .hero { min-height: 0; }
   .hero-art { min-height: 260px; }
   .compact { grid-template-columns: 1fr; }
